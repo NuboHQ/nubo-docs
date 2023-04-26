@@ -1,7 +1,7 @@
 import { DocsThemeConfig } from 'nextra-theme-docs';
 
 const config: DocsThemeConfig = {
-  docsRepositoryBase: 'https://github.com/NuboHQ/nubo-docs',
+  docsRepositoryBase: 'https://github.com/NuboHQ/nubo-docs/tree/main',
   project: {
     link: 'https://github.com/NuboHQ/nubo',
   },
