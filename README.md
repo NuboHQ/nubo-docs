@@ -1,1 +1,1 @@
-# nubo-docs
+# Nubo Docs
