@@ -1,5 +1,6 @@
 {
   "index": "Introduction",
-  "another": "Another Page",
-  "advanced": "Advanced (A Folder)"
+  "getting-started": "Getting Started",
+  "clients": "Clients",
+  "api-reference": "API Reference"
 }

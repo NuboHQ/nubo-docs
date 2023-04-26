@@ -1,0 +1,66 @@
+import { Tabs, Tab } from '@/components/Tabs';
+
+# Node.js
+
+## Requirements
+
+- A Nubo [database](https://admin.nubo.app/databases/new)
+- Latest stable version of [Node.js](https://nodejs.org) installed
+
+## Install
+
+<Tabs items={['npm', 'pnpm', 'yarn']}>
+  <Tab>
+  ```bash copy
+  npm install nubo
+  ```
+  </Tab>
+  <Tab>
+  ```bash copy
+  pnpm add nubo
+  ```
+  </Tab>
+  <Tab>
+  ```bash copy
+  yarn add nubo
+  ```
+  </Tab>
+</Tabs>
+
+## Environment
+
+After creating a database, copy the secret key and add it to your local `.env` file as `NUBO_SECRET_KEY`.
+
+```bash filename=".env"
+NUBO_SECRET_KEY=sk_••••••••••
+```
+
+## Connect
+
+By default, the connection uses the `NUBO_SECRET_KEY` environment variable.
+
+```typescript copy
+import { connect } from 'nubo';
+
+const connection = connect();
+```
+
+You can also specify a secret key directly in the connect method's config, although, note that environment variables are always the recommended approach.
+
+```typescript copy
+import { connect } from 'nubo';
+
+const connection = connect({ key: 'sk_••••••••••' });
+```
+
+## Drizzle ORM
+
+[Drizzle](https://github.com/drizzle-team/drizzle-orm) is a great [ORM](https://en.wikipedia.org/wiki/Object%E2%80%93relational_mapping) that gives you a type safe way to manage your data.
+Here is how you can use a Nubo connection with Drizzle.
+
+```typescript copy
+import { drizzle } from 'drizzle-orm/planetscale-serverless';
+
+const connection = connect();
+const db = drizzle(connection);
+```

@@ -1,0 +1,29 @@
+import { Tabs, Tab } from '@/components/Tabs';
+
+# API Reference
+
+Nubo allows you to send SQL queries directly to your database using the API. Make sure to first create your database in the [Nubo Dashboard](https://admin.nubo.app/databases/new)
+
+## Endpoint
+
+```bash filename="Base URL" copy
+https://data.nubo.global
+```
+
+## Authentication
+
+Authentication to the API is performed via [HTTP Basic Auth](https://en.wikipedia.org/wiki/Basic_access_authentication). Provide your secret key as the basic auth username value. You do not need to provide a password.
+
+If you need to authenticate via bearer auth (e.g., for a cross-origin request), use: `-H "Authorization: Bearer sk_••••••••••"` instead of `-u sk_••••••••••`.
+
+## SQL Query
+
+```bash copy
+curl --location 'https://data.nubo.global/sql' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer sk_••••••••••' \
+--data '{
+    "query": "select * from employees"
+}
+'
+```
